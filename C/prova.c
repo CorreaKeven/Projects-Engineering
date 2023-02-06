@@ -1,15 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
+#include <stype.h>
 
-static const char *letrasOTAN[]={
-"Alpha","Bravo","Charly","Delta","Eco","Foxtrot","Golf","Hotel","India","Juliet",
-"Kilo","Lima","Mike","November","Oscar","Papa","Quebec","Romeo","Sierra","Tango",
-"Uniform","VIctor","Whiskey","Xray","Yoga","Zulu"}
 
 
 void soletraOTAN(char *txt){
 int k,c; /*INDICE DO ARRAY TXT[K]*/
+static const char *letrasOTAN[]={
+"Alpha","Bravo","Charly","Delta","Eco","Foxtrot","Golf","Hotel","India","Juliet",
+"Kilo","Lima","Mike","November","Oscar","Papa","Quebec","Romeo","Sierra","Tango",
+"Uniform","VIctor","Whiskey","Xray","Yoga","Zulu"}
 
 for(k=0; txt[k] ;k++)
 {	c=toupper(txt[k]); /* PEGA LETRA CONVERTENDO PARA MAIUSCULO*/

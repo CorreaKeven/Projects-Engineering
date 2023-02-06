@@ -1,35 +1,58 @@
-/*Constante Strin*/
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
 
-
-void escreve(char *txt)
-{
-	int i;  /*indice inteiro*/
-	for (i=0; txt[i]!='\0';i++){
-		putchar(toupper(txt[i]));  /*toupper transforma em maiusculas as  strings*/
-	}
-}
-void escreve2(char *txt)/* funcao escreve2*/{
-	while(*txt) putchar(*txt++);  /*aponta para o endereco de memoria txt e verifica se e verdadeiro ou seja verifica se a alguma string no endereco*/
-}
-#define NOMEMAX 80
-
-
-int main()
-{ 
-int i;
-int x=123;
-char nome[NOMEMAX];
-int y=456;
-printf("\nNome = ");
-fgets(nome, NOMEMAX,stdin);
-for (i=0;(i < NOMEMAX-1) && (nome[i] >= ' '); i++);
-	nome[i]= '\0';
+void traspf(char *txt){
 	
-	printf("\nBoa noite \"%s\"!\n",nome);
-printf("x=%d; y=%d\n",x,y);
+	int i;
+	for(i = 0; txt[i]; i++);
+	while (i--){
+		putchar(txt[i]);
+		}
+}
+
+
+int main(int argc, char **argv)
+{
+	
+traspf(argv[0]);
 return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+void lenomeinvertido(char *txt){
+	
+	int i;
+	for(i = 0; txt[i]; i++);
+	while (i--){
+		putchar(txt[i]);
+		}
+}
+
+int main (int argc*, char argv**) {
+	
+	int i;
+	for (i = argc-1; i >= 0; i--){
+		
+		lenomeinvertido(argv[i]);
+		putchar(' ');
+	}
+	lenomeinvertido("\n\r");
+	return 0;
+}
+
+*/

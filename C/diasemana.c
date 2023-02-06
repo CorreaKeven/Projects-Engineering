@@ -7,7 +7,8 @@ int formulaK( int d, int m, int a){
 }
 
 
-int main( int argc,  char** argv) {
+int main( int argc,  char** argv)
+ {
 /*argc – é um valor inteiro que indica a quantidade de argumentos.*/
 /*argv – é um vetor de char que contém os argumentos*/
 
@@ -24,7 +25,6 @@ int dias_mes[] =  { 31, 28, 31, 30,  31, 30, 31, 31, 30, 31, 30, 31 } ;
 char *dia_sem[] = { "Segunda", "Terca", "Quarta","Quinta", "Sexta", "Sabado", "Domingo"};
 char *mes_ano[] = { "Janeiro", "Feveiro", "Marco", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" };
 
-int asea = dias_mes[14];
 
 
 
@@ -43,7 +43,6 @@ if( (a % 4) == 0 )    //se o modulo do ano for igual a 0 ele e bisexto
 	bisexto = 1;
 	dias_mes[1] = 29;
 }  
-
 
 
 //validação da entrada  
@@ -65,26 +64,18 @@ if ( error != 0 ){
 	return -1;
 }
 
-
-
-
-		
+	
 if( m < 3 )
 {
 	m+=12;
 	a--;
 }
 
-
 int k = formulaK(d,m,a);
 
 ds = ( k % 7 );
 
 char* dia = dia_sem[ds];
-
-
-
-
 
 // imprimi resultados
 
@@ -98,6 +89,4 @@ else {
 	printf(", %d nao e bisexto\n",ano);
 }
 
-system("pause");	
-
-} 	
+}
