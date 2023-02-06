@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main( int argc,  char** argv) {
+/*argc – é um valor inteiro que indica a quantidade de argumentos.*/
+/*argv – é um vetor de char que contém os argumentos*/
+
+int d = argv[1]; 
+int m = argv[2];
+int ano = argv[3];
+
+printf("Ola, Este programa informa o dia da semana decorrente da data informada.\n");
+printf("Informe o dia,mes e ano respectivamente\n");
+scanf("%d %d %d",&d,&m,&ano);
+	
+int a = ano - 1900; // conforme regra: subtrair 1900 do ano.
+int bisexto = (a % 4) == 0; //se o modulo do ano for igual a 0 ele é bisexto
+	
+char *mes_ano[] = { "Janeiro", "Feveiro", "Marco", "Abril", "Maio", "Junho",
+ "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" };
+
+int *dias_mes[] = {	31, 28, 31, 30,  31, 30, 31, 31, 30, 31, 30, 31	} ; 
+					//jan fev mar abri mai jun jul agt set out nob dez.
+
+char *diasem[] = { "Segunda", "Terca", "Quarta","Quinta", "exta", "Sabado", "Domingo"};
+
+char* mes = mes_ano[m-1]; 
+	
+	if( d < 1 || d > dias_mes[m-1] )	
+{	printf("Por favor insira um dia valido.\n"); return;	}
+	
+	if( m < 1 || m>12)
+{	printf("Por favor insira um mes valido.\n");	}
+
+	if( m < 3 )
+{	m+=12;	a--;	}
+
+	int k = d + 2*m + (3*m + 3)/5 + a + a/4 + 7001;
+	
+	int ds = ( k % 7 );
+
+	char* dia = diasem[ds];
+	printf("%s %d de %s de %d",dia,d,mes,ano);
+} 	
